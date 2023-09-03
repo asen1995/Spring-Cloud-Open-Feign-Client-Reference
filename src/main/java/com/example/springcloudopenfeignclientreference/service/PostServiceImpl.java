@@ -24,4 +24,13 @@ public class PostServiceImpl implements PostService {
         log.debug("Posts: {}", postsFrom);
         return postsFrom;
     }
+
+    @Override
+    public Post getPostById(Long postId) {
+        log.info("Get post by id: {}", postId);
+
+        final Post post = jsonPlaceHolderServiceClient.getPostById(postId);
+        log.debug("Post: {}", post);
+        return post;
+    }
 }
